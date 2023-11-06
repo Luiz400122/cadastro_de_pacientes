@@ -1,0 +1,37 @@
+<div class="container">
+  <form action="/cadastro" method="post">
+    <label for="name">Nome</label>
+    <input type="text" name="nome" id="" />
+
+    <label for="sobrenome">sobrenome</label>
+    <input type="text" name="sobrenome" id="" />
+
+    <label for="CPF">CPF</label>
+    <input type="text" name="cpf" id="" />
+
+    <label for="Nascimento">Nascimento</label>
+    <input type="date" name="nascimento" id="" />
+
+    <label for="Senha">Senha</label>
+    <input type="password" name="senha" id="senha" />
+
+    <label for="confirmeSenha">Confirme sua Senha</label>
+    <input type="password" name="" id="confirmeSenha" />
+
+    <input type="submit" value="Enviar" id="btn" />
+  </form>
+</div>
+<script>
+  var senha = document.getElementById("senha");
+  var confirmeSenha = document.getElementById("confirmeSenha");
+  var form = document.querySelector("form");
+  var bt = document.getElementById("btn").addEventListener("click", (evt) => {
+    evt.preventDefault();
+    if (senha.value != confirmeSenha.value) {
+      alert("As senhas devem ser iguais!");
+    } else {
+      form.submit();
+      alert("Dados enviados!");
+    }
+  });
+</script>
